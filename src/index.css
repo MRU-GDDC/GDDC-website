@@ -1,0 +1,43 @@
+:root {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #01a9e9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  width: 800%;
+  height: 800%;
+  position: fixed;
+  top: -200%;
+  left: -200%;
+  z-index: -1;
+  transform: rotate(30deg);
+  background-image: url("./assets/gddc-tile.png");
+  background-repeat: repeat;
+  background-size: 150px;
+  opacity: 0.3;
+  overflow: hidden;
+  animation: move 100s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0) rotate(30deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-18%) rotate(30deg);
+  }
+}
