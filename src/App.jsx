@@ -1,16 +1,24 @@
 import "./App.css";
 
 import Header from "./Header";
-import Content from "./Content";
+import Content from "./content/Content";
 import Footer from "./Footer";
+import Background from "./Background.jsx";
+
+import { useState } from "react";
 
 function App() {
+  const [animating, setAnimating] = useState(true);
+
   return (
-    <main>
-      <Header />
-      <Content />
-      <Footer />
-    </main>
+    <>
+      <main>
+        <Background animating={animating} />
+        <Header animating={animating} setAnimating={setAnimating} />
+        <Content />
+        <Footer />
+      </main>
+    </>
   );
 }
 

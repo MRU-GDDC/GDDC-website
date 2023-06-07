@@ -9,6 +9,7 @@
   width: 100%;
   min-height: 100vh;
   background-color: #01a9e9;
+  font-size: 1.3em;
 }
 
 * {
@@ -21,16 +22,24 @@
   width: 800%;
   height: 800%;
   position: fixed;
-  top: -200%;
+  top: -300%;
   left: -200%;
   z-index: -1;
   transform: rotate(30deg);
   background-image: url("./assets/gddc-tile.png");
   background-repeat: repeat;
   background-size: 150px;
-  opacity: 0.3;
+  opacity: 0.15;
   overflow: hidden;
-  animation: move 100s linear infinite;
+  animation: move 800s linear infinite;
+}
+
+.background-animating {
+  animation-play-state: running;
+}
+
+.background-paused {
+  animation-play-state: paused;
 }
 
 @keyframes move {

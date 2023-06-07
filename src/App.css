@@ -1,5 +1,5 @@
 main {
-  max-width: 600px;
+  max-width: 700px;
   background-color: #fff;
   border-radius: 24px;
   /* gradient from 01a9e9 to 3184d3 */
@@ -36,7 +36,7 @@ a.social-link {
   height: 48px;
   width: 100%;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   border-radius: 16px;
   background-color: #fff;
   color: #3184d3;
@@ -48,6 +48,8 @@ a.social-link img {
   height: 24px;
   margin-right: 12px;
   border: 0;
+  filter: invert(50%) sepia(45%) saturate(1118%) hue-rotate(178deg)
+    brightness(85%) contrast(95%);
 }
 
 a.social-link:hover {
@@ -60,11 +62,13 @@ article section img {
   width: 100%;
   height: auto;
   border: 6px solid #fff;
+  aspect-ratio: 4/3;
+  object-fit: cover;
 }
 
 article p {
   margin: 12px 0;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   line-height: 1.5;
   color: #fff;
 }
@@ -79,15 +83,70 @@ article h2,
 article h3 {
   margin: 12px 0;
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1.7em;
+}
+
+.Executives {
+  display: flex;
+  flex-direction: column;
+}
+
+.Executives h2 {
+  margin-top: 0;
+}
+
+.Executives > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.Executives > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 150px);
+}
+
+.Executives > div > div:not(:nth-child(2)) {
+  margin-top: 32px;
+}
+
+.Executives > div > div > h4 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+}
+
+.Executives > div > div > p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+}
+
+.Executives img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  margin-bottom: 12px;
+  object-fit: cover;
 }
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 24px;
-  height: 48px;
+  padding: 6px 12px;
+  min-height: 52px;
   width: calc(100% - 24px);
   border-radius: 16px;
   margin: 0 auto;
@@ -96,7 +155,27 @@ footer {
   color: #3184d3;
 }
 
-@media (max-width: 650px) {
+footer hr {
+  width: 100%;
+  border: 0;
+  margin: 2px 0;
+  border-top: 2px solid #3184d3;
+}
+
+.bg-toggle-button {
+  position: absolute;
+  margin: 12px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  text-align: left;
+}
+
+@media (max-width: 750px) {
   main {
     margin: 0;
     max-width: 100%;
@@ -106,5 +185,22 @@ footer {
   :root {
     background: linear-gradient(90deg, #01a9e9, #3184d3);
     justify-content: flex-start !important;
+  }
+
+  .Executives > div > div:not(:nth-child(2)) {
+    margin-top: 12px;
+  }
+
+  .Executives > div > div > h4 {
+    font-size: 0.9em;
+  }
+
+  .Executives > div > div > p {
+    font-size: 0.8em;
+  }
+
+  .Executives img {
+    width: 120px;
+    height: 120px;
   }
 }
